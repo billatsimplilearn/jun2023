@@ -26,7 +26,7 @@ public class FizzBuzz {
 	}
 	public void countingNumbers(int start, int end)
 	{
-		for(int i = start; i < end; i++)
+		for(int i = start; i <= end; i++)
 		{
 			System.out.println(fizzBuzzResult(i));
 		}
