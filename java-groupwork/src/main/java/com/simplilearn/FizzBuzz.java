@@ -3,9 +3,10 @@ package com.simplilearn;
 public class FizzBuzz {
 
 	public static void main(String[] args) {
-
-		 FizzBuzz count = new FizzBuzz();
-		 count.fizzBuzz(100);
+		
+		FizzBuzz count = new FizzBuzz();
+		count.fizzBuzz(100);
+		
 	}
 
 	public void fizzBuzz(int num) {
