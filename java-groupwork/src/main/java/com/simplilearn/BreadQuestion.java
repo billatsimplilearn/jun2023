@@ -8,11 +8,9 @@ public class BreadQuestion {
 		if((sandwich1.size() == 1 && sandwich2.size() >= 2) || (sandwich1.size() >= 2 && sandwich2.size() == 1))
 		{
 			return false;
-		}
-		
+		}	
 		List<String> bread = new ArrayList<>();
 		bread.add(sandwich1.get(0));
-		
 		if(sandwich1.size() >= 2)
 		{
 			//add last bread
@@ -24,7 +22,6 @@ public class BreadQuestion {
 			return false;
 		}
 		
-		
 		if(!bread.isEmpty())
 		{
 			if(!bread.remove(sandwich2.get(sandwich2.size() - 1)))
@@ -32,20 +29,18 @@ public class BreadQuestion {
 				return false;
 			}
 		}
-		
-		
 		return true;
 	}
 	
 	public static void main(String[] Arg)
 	{
 		BreadQuestion bq = new BreadQuestion();
-		List<String> bread1 = new ArrayList<>();
-		bread1.add("toast");
-		bread1.add("white bread");
-		List<String> bread2 = new ArrayList<>();
-		bread2.add("white bread");
-		bread2.add("wheat bread");
-		System.out.println(bq.usingSameBread(bread1, bread2));
+		List<String> sandwich1 = new ArrayList<>();
+		sandwich1.add("toast");
+		sandwich1.add("white bread");
+		List<String> sandwich2 = new ArrayList<>();
+		sandwich2.add("white bread");
+		sandwich2.add("wheat bread");
+		System.out.println(bq.usingSameBread(sandwich1, sandwich2));
 	}
 }
