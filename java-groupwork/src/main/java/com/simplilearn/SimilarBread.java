@@ -5,19 +5,28 @@ import java.util.List;
 
 public class SimilarBread {
 
-	public boolean compareBread(List<String> list1, List<String> list2) {
+	public boolean compareBread(List<String> sandwich1, List<String> sandwich2) {
 
+		String sandwich1Slice1= sandwich1.get(0); 
+		String sandwich1Slice2= sandwich1.get(sandwich1.size()-1); 
+		String sandwich2Slice1= sandwich2.get(0);
+		String sandwich2Slice2= sandwich2.get(sandwich2.size()-1); 
+	     
+		if( (sandwich1Slice1.equals(sandwich2Slice2)) || (sandwich2Slice1.equals(sandwich2Slice2))){
 		
-		if (list1.get(0).equals(list2.get(0)) || (list1.get(2).equals(list2.get(2)))) {
-
 			System.out.println("true");
 			
-		} else {
 			
-			System.out.println("false");
+			return true;
 		}
 		
-		return false;
+	
+		else {System.out.println("false"); 
+		 
+		    return false;}
+		
+		
+		
 
 	}
 
@@ -37,9 +46,10 @@ public class SimilarBread {
 		sandwich2.add("white bread");
 		sandwich2.add("chicken");
 		sandwich2.add("white bread");
+		sandwich2.add("white ");
 
 		SimilarBread result = new SimilarBread();
-		result.compareBread(sandwich1, sandwich2);
+		result.compareBread(sandwich1, sandwich2); 
 
 	}
 
