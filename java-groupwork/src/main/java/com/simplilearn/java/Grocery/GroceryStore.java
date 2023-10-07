@@ -27,7 +27,7 @@ public class GroceryStore {
 		- Product : ProductSku
 	
 	At least three one-to-many relationships: 
-		- Store : Employees
+		- Store : Employee
 		- Store : Departments
 		- Department : Products
 
@@ -36,7 +36,9 @@ public class GroceryStore {
 		- ParentCategory : SubCategory
 	
 	Many-to-many relationships:
-		- 
+		- Departments : Employee
+		- Employees : Products
+		- Customers : Products
 		
 		
 	============================================
