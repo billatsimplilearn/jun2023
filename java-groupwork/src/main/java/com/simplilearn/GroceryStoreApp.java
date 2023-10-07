@@ -1,11 +1,8 @@
 package com.simplilearn;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class GroceryStoreApp {		
-
+public class GroceryStoreApp {
 
     private String name;
     private double price;
@@ -27,38 +24,10 @@ public class GroceryStoreApp {
         return price;
     }
 
-
-class ShoppingCart {
-    private ArrayList<GroceryStoreApp> items;
-
-    public ShoppingCart() {
-        items = new ArrayList<>();
-    }
-
-    public void addItem(GroceryStoreApp product) {
-        items.add(product);
-    }
-
-    public void displayItems() {
-        for (GroceryStoreApp item : items) {
-            System.out.println(item.getName() + " - $" + item.getPrice());
-        }
-    }
-
-    public double calculateTotal() {
-        double total = 0;
-        for (GroceryStoreApp item : items) {
-            total += item.getPrice();
-        }
-        return total;
-    }
-}
-	
 	
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        GroceryStoreApp myOuter = new GroceryStoreApp();
-        GroceryStoreApp.ShoppingCart cart = myOuter.new ShoppingCart();
+        Scanner scanner = new Scanner(System.in);       
+        ShoppingCart cart = new ShoppingCart();
 
         for ( ; ; ) {
             System.out.println("\nMenu");
