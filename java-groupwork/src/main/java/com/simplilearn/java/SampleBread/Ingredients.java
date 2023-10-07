@@ -1,6 +1,6 @@
 package com.simplilearn.java.SampleBread;
 
-import java.util.ArrayList;
+import java.util.ArrayList;			// not necessary
 import java.util.List;
 
 public class Ingredients {
