@@ -1,5 +1,5 @@
 package com.simplilearn.java.Grocery;
 
-public class Employee {
+public class Product {
 
 }

@@ -2,11 +2,45 @@ package com.simplilearn.java.Grocery;
 
 public class GroceryStore {
 
+	/*
+	 * 
+	============================================
 
-	//Homework / Classwork due next Saturday:
-	//Model a Grocery Store: Store name (Walmart), Department (produce), Workforce (employees), product (apple)
-	//At least one, one-to-one relationship: Store name (Walmart), product (apple) 
-	//At least three one-to-many relationships: 
+	Homework with your team due next Saturday:
+	Finish your sandwich checker!
+	Model a Grocery Store:
+	At least one, one-to-one relationship
+	At least three one-to-many relationships
+	At least one one-to-self relationships
+	If you can, a many-to-many
+	Code this in Java in the ways we demonstrated today.  No logic necessary but it must compile.
+	Finally, be creative and go nuts!
+	The Eclipse-Hello project where I left modeling examples: https://github.com/billatsimplilearn/eclipseHello  Remember, I work in this, but you need to work in the new java-groupwork project!
+	Have a great week!  I look forward to seeing you all again next week (and hopefully my camera will work).
+	
+	*Don't get too specific. Example: how employee stock the products.
+	*Customers buying things in the store.
+	
+	Model a Grocery Store: 
+	 
+	At least one, one-to-one relationships:
+		- Product : ProductSku
+	
+	At least three one-to-many relationships: 
+		- Store : Employees
+		- Store : Departments
+		- Department : Products
+
+	At least one one-to-self relationships:
+		- Supervisor : Subordinate
+		- ParentCategory : SubCategory
+	
+	Many-to-many relationships:
+		- 
+		
+		
+	============================================
+		
 	Store name (Walmart), Department (produce), Department (produce) Department (produce)
 	Department (produce), Product (Apple), Product (Orange), Product (Banana)
 	Department (Produce), Department (Electronics), Department (Appliances),
@@ -48,4 +82,5 @@ public class GroceryStore {
 	//Code this in Java in the ways we demonstrated today.  No logic necessary but it must compile.
 	//Finally, be creative and go nuts!
 }
+*/
 }
