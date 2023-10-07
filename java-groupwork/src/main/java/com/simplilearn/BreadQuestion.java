@@ -40,7 +40,7 @@ public class BreadQuestion {
 		sandwich1.add("white bread");
 		List<String> sandwich2 = new ArrayList<>();
 		sandwich2.add("white bread");
-		sandwich2.add("wheat bread");
+		sandwich2.add("white bread");
 		System.out.println(bq.usingSameBread(sandwich1, sandwich2));
 	}
 }

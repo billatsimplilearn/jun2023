@@ -18,7 +18,6 @@ public class Planet {
 		return _weight_coefficient * weight;
 	}
 	
-	
 	public static void main(String[] Arg)
 	{
 		Planet[] planets = new Planet[6];
