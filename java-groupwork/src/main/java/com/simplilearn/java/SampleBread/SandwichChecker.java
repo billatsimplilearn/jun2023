@@ -15,7 +15,7 @@ public class SandwichChecker {
 		boolean bread1 = false;
 		boolean bread2 = false;
 		
-		if (sandwich1Bread1Type.equalsIgnoreCase(sandwich2Bread1Type) && (sandwich1Bread1Type.equalsIgnoreCase(sandwich2Bread2Type))){
+		if (sandwich1Bread1Type.equalsIgnoreCase(sandwich2Bread1Type) || (sandwich1Bread1Type.equalsIgnoreCase(sandwich2Bread2Type))){
 //			if (sandwich1Bread1Type.equalsIgnoreCase(sandwich2Bread2Type)) {
 //				bread1 = true;
 //			}
