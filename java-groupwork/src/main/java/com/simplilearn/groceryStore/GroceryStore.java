@@ -7,11 +7,14 @@ public class GroceryStore {
 
 	private List<Product> products;
 	private List<Employee> employees;
+	private List<Vendor> vendors;
 
 	public GroceryStore() {
 
 		this.products = new ArrayList<>();
 		this.employees = new ArrayList<>();
+		this.vendors = new ArrayList<>();
+
 	}
 
 	public void addProduct(Product product) {
@@ -39,6 +42,19 @@ public class GroceryStore {
 			System.out.println(employee);
 		}
 	}
+	
+	public void addVendor(Vendor vendor) {
+		vendors.add(vendor);
+	}
+
+	public void vendorList() {
+		System.out.println("\nVendors of the My Grocery Store:");
+		System.out.println("Vendor " + " Contact info" );
+		for (Vendor vendor : vendors) {
+			System.out.println(vendor);
+		}
+	}
+	
 
 	public static void main(String[] args) {
 
@@ -54,6 +70,12 @@ public class GroceryStore {
 		store.addEmployee(new Employee(222, "Sam", "Cashier"));
 		store.addEmployee(new Employee(333, "Mike", "Shopkeeper"));
 		store.listEmployees();
+		
+		store.addVendor(new Vendor("Sysco", 41234545));
+		store.addVendor(new Vendor("Walmart", 1235555));
+		store.addVendor(new Vendor("Publix", 41236677));
+		store.addVendor(new Vendor("FoodVend", 41238765));		
+		store.vendorList();
 
 	}
 
