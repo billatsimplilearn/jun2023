@@ -8,7 +8,7 @@ public class CheckOut {
 	Queue<Customer> customersWaitingToCheckOut;
 	private void CheckOut()
 	{
-		while(customersWaitingToCheckOut.isEmpty())
+		while(!customersWaitingToCheckOut.isEmpty())
 		{
 			customerIsCheckingOut = customersWaitingToCheckOut.poll();
 			CheckOutCurrentCustomer();
