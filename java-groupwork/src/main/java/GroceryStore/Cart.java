@@ -4,5 +4,5 @@ import java.util.List;
 
 public class Cart {
 	
-	private List<Produce> itemInCart;
+	private List<Product> itemInCart;
 }
