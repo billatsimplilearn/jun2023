@@ -1,0 +1,78 @@
+GroceryStore: 
+Staff, Product, Customer, Inventory
+One-to-one
+
+Staff:
+Can scan items from Shopping Cart to calculate TotalPurchasePrice. 
+Calculates ProductPrice, including Tax, and lists the total as TotalPurchasePrice.
+Can re-stock items to increase QuantityAvailable. 
+
+Inventory: Manages QuantityAvailable and tells Staff when to Stock.
+
+FruitAppleQuantityAvailable = 10 ;
+FruitAppleID = 11.
+
+FruitBananaQuantityAvailable = 10 ;
+FruitBananaID = 12.
+
+FruitOrangeQuantityAvailable = 10 ;
+FruitOrangeID = 13.
+
+VegetableGreenBeanQuantityAvailable = 10 ; 
+VegetableGreenBeanID = 21.
+
+VegetablePotatoQuantityAvailable = 10 ; 
+VegetablePotatoID = 22.
+
+VegetableOnionQuantityAvailable = 10 ;
+VegetableOnionID = 23.
+
+MeatChickenQuantityAvailable = 10 ; 
+MeatChickenID = 31.
+
+MeatPorkQuantityAvailable = 10 ; 
+MeatPorkID = 32.
+
+MeatBeefQuantityAvailable = 10 ;
+MeatBeefID = 33.
+
+
+This portion must run anytime the ShoppingCart.add action is taken. 
+QuantityAvailable? (boolean) 
+if {ShoppingCart.add ProductID, ProductID - 1;
+display ProductID.QuantityAvailable ; }
+
+When QuantityAvailable <= 2, Staff.Stock
+
+Product: Fruits, Vegetables, Meat
+ProductID, ProductName, ProductPrice, and QuantityAvailable will always be displayed. 
+If a Product is placed in ShoppingCart, QuantityAvailable will decrease by the same amount. 
+
+Fruits:
+Apples, Bananas, Oranges
+$1.00 per fruit.
+ProductFruitID = 1. 
+
+One-to-many, many-to-many
+
+Vegetables: 
+GreenBeans, Potatoes, Onions
+$0.50 per vegetable. 
+ProductVegetableID = 2. 
+
+One-to-many, many-to-many
+
+Meat: 
+Chicken, Pork, Beef
+$2.00 per pound of meat. 
+ProductMeatID = 3. 
+
+One-to-many, many-to-many
+
+Shopping Cart: Holds, adds, and removes up to 20 Product. 
+Always displays ProductQuantity ProductName of Product in the Shopping Cart.  
+
+One-to-one, many-to-many
+
+Customer: Places, removes, and pays for Product in ShoppingCart. 
+One-to-one
