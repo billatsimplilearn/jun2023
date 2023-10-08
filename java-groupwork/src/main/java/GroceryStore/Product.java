@@ -5,6 +5,8 @@ public class Product {
 	//Fruits and Vegetables
 	private String name;
 	private float price;
+	private Category category;
+	
 	private enum Category{
 		Bakery,
 		Dairy,
@@ -16,6 +18,7 @@ public class Product {
 		MeatAndSeafood,
 		Pet,
 		Tobacco,
-		Wine
+		Wine,
+		Grocery
 	}
 }
