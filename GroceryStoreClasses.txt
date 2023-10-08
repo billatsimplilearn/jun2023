@@ -1,83 +1,78 @@
 GroceryStore: 
-Vendors, Staff, Product Categories
+Staff, Product, Customer, Inventory
 One-to-one
 
+Staff:
+Can scan items from Shopping Cart to calculate TotalPurchasePrice. 
+Calculates ProductPrice, including Tax, and lists the total as TotalPurchasePrice.
+Can re-stock items to increase QuantityAvailable. 
 
-Vendors: Products
-many-to-many, one-to-one, one-to-many
+Inventory: Manages QuantityAvailable and tells Staff when to Stock.
 
-Staff: Employees, temporary employees
-Many-to-one, many-to-many
+FruitAppleQuantityAvailable = 10 ;
+FruitAppleID = 11.
 
-Employees: 
-Full-time, part-time
-One-to-many, many-to-many, one-to-one (recursive)
+FruitBananaQuantityAvailable = 10 ;
+FruitBananaID = 12.
 
-Full-time employees: 
-Stocker, cashier, manager
-One-to-many, many-to-many, one-to-one
+FruitOrangeQuantityAvailable = 10 ;
+FruitOrangeID = 13.
 
-Part-time employees: 
-Stocker, cashier, manager
-One-to-many, many-to-many, one-to-one
+VegetableGreenBeanQuantityAvailable = 10 ; 
+VegetableGreenBeanID = 21.
 
-Temporary employees:
-Stocker, cashier, manager
+VegetablePotatoQuantityAvailable = 10 ; 
+VegetablePotatoID = 22.
 
-//John Doe, Full-time 
-//John Doe, Part-time
-//John Doe, Temporary employee
-Staff-->Employees {many-to-many}
-Staff--> Employees--> Stocker (John Doe) {one-to-many}
-Staff-->Employees--> Stocker(John Doe) --> Cashier (Jane Doe) {one-to-one}
-Staff-->Employees--> Full-time employees--> Stocker(John Doe) --> Part-time employee --> Stocker (John Doe) {one-to-one}
-Staff--> Employees--> Full-time employees--> Stocker (John Doe) --> Part-time employee --> Stocker (John Doe) --> Temporary employee--> Stocker (John Doe)
+VegetableOnionQuantityAvailable = 10 ;
+VegetableOnionID = 23.
 
-Product Categories: Fruits, Vegetables, Meat, Bakery, Flowers, Dairy, Office Supplies
+MeatChickenQuantityAvailable = 10 ; 
+MeatChickenID = 31.
+
+MeatPorkQuantityAvailable = 10 ; 
+MeatPorkID = 32.
+
+MeatBeefQuantityAvailable = 10 ;
+MeatBeefID = 33.
+
+
+This portion must run anytime the ShoppingCart.add action is taken. 
+QuantityAvailable? (boolean) 
+if {ShoppingCart.add ProductID, ProductID - 1;
+display ProductID.QuantityAvailable ; }
+
+When QuantityAvailable <= 2, Staff.Stock
+
+Product: Fruits, Vegetables, Meat
+ProductID, ProductName, ProductPrice, and QuantityAvailable will always be displayed. 
+If a Product is placed in ShoppingCart, QuantityAvailable will decrease by the same amount. 
 
 Fruits:
-Apples, bananas, oranges
+Apples, Bananas, Oranges
+$1.00 per fruit.
+ProductFruitID = 1. 
+
 One-to-many, many-to-many
 
-Apples: Red, Green
-many-to-many
-
-Red Apples: Honeycrisp, Gala
-one-to-many, many-to-many
-
-Red Apple Honeycrisp: Single, bagged
-One-to-one, one-to-many
-
-Red Apple Gala: Single, bagged
-One-to-one, one-to-many
-
-Green Apples: Granny Smith
-One-to-one, one-to-many
-
-Green Apple Granny Smith: Single, bagged
-One-to-one, one-to-many
-
-
 Vegetables: 
-Green beans, potatoes, onions
+GreenBeans, Potatoes, Onions
+$0.50 per vegetable. 
+ProductVegetableID = 2. 
+
 One-to-many, many-to-many
 
 Meat: 
-Chicken, pork, beef
+Chicken, Pork, Beef
+$2.00 per pound of meat. 
+ProductMeatID = 3. 
+
 One-to-many, many-to-many
 
-Bakery: 
-Bread, muffins, cookies
-One-to-many, many-to-many
+Shopping Cart: Holds, adds, and removes up to 20 Product. 
+Always displays ProductQuantity ProductName of Product in the Shopping Cart.  
 
-Flowers: 
-Roses, daisies, carnations
-One-to-many, many-to-many
+One-to-one, many-to-many
 
-Dairy: 
-Ice Cream, milk, yogurt, butter
-One-to-many, many-to-many
-
-Office Supplies: 
-Paper, pens, markers, scissors
-One-to-many, many-to-many
+Customer: Places, removes, and pays for Product in ShoppingCart. 
+One-to-one
