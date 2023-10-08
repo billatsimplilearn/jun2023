@@ -1,0 +1,83 @@
+GroceryStore: 
+Vendors, Staff, Product Categories
+One-to-one
+
+
+Vendors: Products
+many-to-many, one-to-one, one-to-many
+
+Staff: Employees, temporary employees
+Many-to-one, many-to-many
+
+Employees: 
+Full-time, part-time
+One-to-many, many-to-many, one-to-one (recursive)
+
+Full-time employees: 
+Stocker, cashier, manager
+One-to-many, many-to-many, one-to-one
+
+Part-time employees: 
+Stocker, cashier, manager
+One-to-many, many-to-many, one-to-one
+
+Temporary employees:
+Stocker, cashier, manager
+
+//John Doe, Full-time 
+//John Doe, Part-time
+//John Doe, Temporary employee
+Staff-->Employees {many-to-many}
+Staff--> Employees--> Stocker (John Doe) {one-to-many}
+Staff-->Employees--> Stocker(John Doe) --> Cashier (Jane Doe) {one-to-one}
+Staff-->Employees--> Full-time employees--> Stocker(John Doe) --> Part-time employee --> Stocker (John Doe) {one-to-one}
+Staff--> Employees--> Full-time employees--> Stocker (John Doe) --> Part-time employee --> Stocker (John Doe) --> Temporary employee--> Stocker (John Doe)
+
+Product Categories: Fruits, Vegetables, Meat, Bakery, Flowers, Dairy, Office Supplies
+
+Fruits:
+Apples, bananas, oranges
+One-to-many, many-to-many
+
+Apples: Red, Green
+many-to-many
+
+Red Apples: Honeycrisp, Gala
+one-to-many, many-to-many
+
+Red Apple Honeycrisp: Single, bagged
+One-to-one, one-to-many
+
+Red Apple Gala: Single, bagged
+One-to-one, one-to-many
+
+Green Apples: Granny Smith
+One-to-one, one-to-many
+
+Green Apple Granny Smith: Single, bagged
+One-to-one, one-to-many
+
+
+Vegetables: 
+Green beans, potatoes, onions
+One-to-many, many-to-many
+
+Meat: 
+Chicken, pork, beef
+One-to-many, many-to-many
+
+Bakery: 
+Bread, muffins, cookies
+One-to-many, many-to-many
+
+Flowers: 
+Roses, daisies, carnations
+One-to-many, many-to-many
+
+Dairy: 
+Ice Cream, milk, yogurt, butter
+One-to-many, many-to-many
+
+Office Supplies: 
+Paper, pens, markers, scissors
+One-to-many, many-to-many
