@@ -1,6 +1,6 @@
 package com.simplilearn.model.GroceryStore;
 
-public class User {
+public abstract class User {
 
 	private int userId;
 	private int password;
@@ -15,4 +15,16 @@ public class User {
 		this.emailAddress = emailAddress;
 	}
 
+	public String toString() {
+		
+		StringBuilder str = new StringBuilder();
+		str.append(userId);
+		str.append(",");
+		str.append(userName);
+		str.append(",");
+		str.append(emailAddress);
+	
+		return str.toString();
+		
+	}
 }

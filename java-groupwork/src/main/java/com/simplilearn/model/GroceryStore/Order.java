@@ -6,8 +6,8 @@ import java.util.List;
 public class Order {
 
 	private int orderId;
-	private List<String> product;
-	private List<String> customerdata;
+	private List<Product> product;
+	private List<Customer> customerdata;
 	private LocalDate orderDate;
 	private Address Address;
 	private double orderTotal;

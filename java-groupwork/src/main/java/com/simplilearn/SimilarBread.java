@@ -15,13 +15,13 @@ public class SimilarBread {
 
 		if ((sandwich1Slice1.equals(sandwich2Slice2)) || (sandwich2Slice1.equals(sandwich2Slice2))) {
 
-			System.out.println("true");
+			
 
 			return true;
 		}
 
 		else {
-			System.out.println("false");
+			
 
 			return false;
 		}
@@ -59,27 +59,61 @@ public class SimilarBread {
 
 	public static void main(String[] args) {
 
-		// String[] list1 = {"white bread", "lettuce", "bread"};
-		// String[] list2 = {"white ", "tomato", "white bread"};
-
-		List<String> sandwich1 = new ArrayList<>();
+		//List<String> sandwich1 = new ArrayList<>();
 		//sandwich1 = List.of("white bread","chicken","White Bread"); & arrays.asList
 		
-		sandwich1.add("white bread");
+	 /**sandwich1.add("white bread");
 		sandwich1.add("chicken");
-		sandwich1.add("white");
-
-		List<String> sandwich2 = new ArrayList<>();
+		sandwich1.add("white");**/
+		
+		/**List<String> sandwich2 = new ArrayList<>();
 		//sandwich2 = List.of("white bread","lettuce","White"); Alternative of .add method with few restrictions  
 		//( List.of cannot accept null or any new value using .add) 
-		sandwich2.add("white");
+		sandwich2.add("white bread");
 		sandwich2.add("chicken");
 		sandwich2.add("white bread");
-		sandwich2.add("white bread");
-
+		sandwich2.add("white bread");**/
+		
+		
 		SimilarBread result = new SimilarBread();
+		
+		List<String> sandwich1 = List.of("White Bread","chicken","lettuce", "Rye");
+		List<String> sandwich2 = List.of("White Bread","chicken","Tomato", "Rye");
+		
+		
+		boolean actual =result.compareBread(sandwich1, sandwich2); // expected true 
+		System.out.println(actual);
+		
+		
+		List<String> sandwich3 = List.of("White Bread","chicken","lettuce", "pumpernickel");
+		List<String> sandwich4 = List.of("White Bread","chicken","Tomato", "Rye");
+		
+		actual = result.compareBread(sandwich3, sandwich4); // expected false 
+		System.out.println(actual);
+		
+		List<String> sandwich5 = List.of("White Bread","chicken","lettuce", "pumpernickel");
+		List<String> sandwich6 = List.of("White Bread","chicken","Tomato", "wheat bread");
+		
+		actual =result.compareBread(sandwich5, sandwich6); // expected false 
+		System.out.println(actual);
+		
+		List<String> sandwich7 = List.of("Bread","chicken","lettuce", "pumpernickel");
+		List<String> sandwich8 = List.of("White Bread","chicken","Tomato", "pumpernickel");
+		
+		result.compareBread(sandwich7, sandwich8); // expected false 
+		
+		List<String> sandwich9 = List.of("Bread","chicken","lettuce", "Cheese", "Spinash", "Rye");
+		List<String> sandwich10 = List.of("Bread", "Rye");
+		
+		result.compareBread(sandwich7, sandwich8); // expected true 
+		
+
+		//SimilarBread result = new SimilarBread();
 		// result.compareBread(sandwich1, sandwich2);
-		result.compareUpsideDown(sandwich1, sandwich2);
+		//result.compareUpsideDown(sandwich1, sandwich2);
+		
+		
+		
 
 	}
 
