@@ -4,7 +4,7 @@ public class Product {
 	
 	//Fruits and Vegetables
 	private String name;
-	private float price;
+	private double price;
 	private Category category;
 	
 	private enum Category{

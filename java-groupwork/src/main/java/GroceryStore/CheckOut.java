@@ -3,18 +3,20 @@ package GroceryStore;
 import java.util.Queue;
 
 public class CheckOut {
-	Employee cashier;
-	Customer customerIsCheckingOut;
-	Queue<Customer> customersWaitingToCheckOut;
-	private void CheckOut()
+	private Employee cashier;
+	private Customer customerIsCheckingOut;
+	private Queue<Customer> customersWaitingToCheckOut;
+	
+	
+	public void checkOut()
 	{
-		while(customersWaitingToCheckOut.isEmpty())
+		while(!customersWaitingToCheckOut.isEmpty())
 		{
 			customerIsCheckingOut = customersWaitingToCheckOut.poll();
-			CheckOutCurrentCustomer();
+			checkOutCurrentCustomer();
 		}
 	}
-	private void CheckOutCurrentCustomer()
+	private void checkOutCurrentCustomer()
 	{
 		//Check out current Cusutomer
 	}
