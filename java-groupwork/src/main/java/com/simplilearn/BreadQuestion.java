@@ -35,12 +35,21 @@ public class BreadQuestion {
 	public static void main(String[] Arg)
 	{
 		BreadQuestion bq = new BreadQuestion();
-		List<String> sandwich1 = new ArrayList<>();
-		sandwich1.add("toast");
-		sandwich1.add("white bread");
-		List<String> sandwich2 = new ArrayList<>();
-		sandwich2.add("white bread");
-		sandwich2.add("white bread");
-		System.out.println(bq.usingSameBread(sandwich1, sandwich2));
+
+		List<String> sandwich1 = List.of("toast", "whatever", "white bread");
+		List<String> sandwich2 = List.of("white bread", "whatever", "toast");
+		System.out.println("expect true, get: " + bq.usingSameBread(sandwich1, sandwich2));
+		
+		List<String> sandwich3 = List.of("toast", "whatever", "toast");
+		List<String> sandwich4 = List.of("toast", "whatever", "toast");
+		System.out.println("expect true, get: " + bq.usingSameBread(sandwich3, sandwich4));
+		
+		List<String> sandwich5 = List.of("white bread", "whatever", "white bread");
+		List<String> sandwich6 = List.of("toast", "whatever", "toast");
+		System.out.println("expect false, get: " + bq.usingSameBread(sandwich5, sandwich6));
+		
+		List<String> sandwich7 = List.of("white bread", "whatever", "white bread");
+		List<String> sandwich8 = List.of("white bread");
+		System.out.println("expect false, get: " + bq.usingSameBread(sandwich7, sandwich8));
 	}
 }
