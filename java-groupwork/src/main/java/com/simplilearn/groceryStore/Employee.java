@@ -7,16 +7,22 @@ public class Employee {
 	private String empName;
 	private String empRole;
 	
+	
+	
+	public Employee() {
+		
+	}
 
 	public Employee(int empId, String empName, String empRole) {
 		this.empId = empId;
 		this.empName = empName;
 		this.empRole = empRole;
 	}
+	
+	
 
-	@Override
-	public String toString() {
-		return empId + " - " + empName + " - " + empRole;
-	}
+	
+
+	
 }
 

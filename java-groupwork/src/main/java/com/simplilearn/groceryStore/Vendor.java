@@ -9,12 +9,6 @@ public class Vendor {
 		this.phoneNum = phoneNum;
 		
 	}
-
-
-	@Override
-	public String toString() {
-		return name + " - " + phoneNum;
-	}
 	
 
 }
