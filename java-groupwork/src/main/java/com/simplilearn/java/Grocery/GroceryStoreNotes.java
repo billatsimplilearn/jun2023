@@ -1,9 +1,9 @@
 package com.simplilearn.java.Grocery;
 
-public class GroceryStore {
+public class GroceryStoreNotes {
 
 	/*
-	 * 
+	 
 	============================================
 
 	Homework with your team due next Saturday:
@@ -18,8 +18,9 @@ public class GroceryStore {
 	The Eclipse-Hello project where I left modeling examples: https://github.com/billatsimplilearn/eclipseHello  Remember, I work in this, but you need to work in the new java-groupwork project!
 	Have a great week!  I look forward to seeing you all again next week (and hopefully my camera will work).
 	
-	*Don't get too specific. Example: how employee stock the products.
-	*Customers buying things in the store.
+	* Don't get too specific. Example: how employee stock the products.
+	* Customers buying things in the store.
+	* Looking for relationships
 	
 	Model a Grocery Store: 
 	 
@@ -40,7 +41,20 @@ public class GroceryStore {
 		- Employees : Products
 		- Customers : Products
 		
+	============================================
 		
+	//  0. Make sure your project is in github and public. DONE
+    //  1. Create a class with a meaningful name. DONE
+    //  2. Create a main method DONE
+    //  3. In main, create a new object of the type declared by your class. We will not be using static methods. DONE
+    //  4. Decide the name of the operation you will be doing. 
+    //  5. Decide input (names and types). Names must be meaningful and declare intention. DONE
+    //  6. Decide output type. 
+    //  7. Make the method that you are calling in main() to be public and add your curly braces.
+    //  8. Create your tests in main
+    //  9. Solve in your method that you have created. Be creative! If you
+    // 10. decide to make other methods to call from your method, make these private.
+         
 	============================================
 		
 	Store name (Walmart), Department (produce), Department (produce) Department (produce)
