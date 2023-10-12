@@ -12,35 +12,27 @@ public class SandwichChecker {
 		String sandwich2Bread1Type = getBread1Type(sandwich2);
 		String sandwich2Bread2Type = getBread2Type(sandwich2);
 		
+		System.out.println("Sandwich 1 Bread 1 type is: " + sandwich1Bread1Type);
+		System.out.println("Sandwich 1 Bread 2 type is: " + sandwich1Bread2Type);
+		System.out.println("Sandwich 2 Bread 1 type is: " + sandwich2Bread1Type);
+		System.out.println("Sandwich 2 Bread 2 type is: " + sandwich2Bread2Type);
+		
+		
 		boolean bread1 = false;
 		boolean bread2 = false;
 		
 		if (sandwich1Bread1Type.equalsIgnoreCase(sandwich2Bread1Type) || (sandwich1Bread1Type.equalsIgnoreCase(sandwich2Bread2Type))){
-//			if (sandwich1Bread1Type.equalsIgnoreCase(sandwich2Bread2Type)) {
-//				bread1 = true;
-//			}
-			bread1 = true;
-		}else if (sandwich1Bread2Type.equalsIgnoreCase(sandwich2Bread1Type) && (sandwich1Bread2Type.equalsIgnoreCase(sandwich2Bread2Type))){
-			bread2 = false;
-		}
-		
-
-/**		if ((sandwich1Bread1Type.equalsIgnoreCase(sandwich1Bread2Type))) {
 			bread1 = true;
 		} else {
 			bread1 = false;
 		}
 		
-		String sandwich2Bread1Type = getBread1Type(sandwich2);
-		String sandwich2Bread2Type = getBread2Type(sandwich2);
-		boolean bread2 = false;
-		
-		if ((sandwich2Bread1Type.equalsIgnoreCase(sandwich2Bread2Type))) {
+		if (sandwich1Bread2Type.equalsIgnoreCase(sandwich2Bread1Type) || (sandwich1Bread2Type.equalsIgnoreCase(sandwich2Bread2Type))){
 			bread2 = true;
 		} else {
 			bread2 = false;
 		}
-**/
+	
 		return (bread1 && bread2);
 
 	}
