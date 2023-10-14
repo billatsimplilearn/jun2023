@@ -1,16 +1,17 @@
 package com.simplilearn.grocery;
 
 public class GroceryStoreApp {
-
+	
 	public static void main(String[] args) {
 		
 		GroceryStoreApp groceryStoreApp = new GroceryStoreApp();
-		groceryStoreApp.initializeProductInventory();
-		groceryStoreApp.initializeProduct();
-		groceryStoreApp.loadShoppingCart();
+		
+		ProductInventoryService productInventoryService = groceryStoreApp.initializeProductInventory();
+		ProductService productService = groceryStoreApp.initializeProduct();
+		groceryStoreApp.loadShoppingCart(productInventoryService);
 	}
 	
-	public void initializeProductInventory() {
+	public ProductInventoryService  initializeProductInventory() {
 		ProductInventoryService productInventoryService = new ProductInventoryService();
 		ProductInventory fruitRedApple = new ProductInventory("11",10);
 		ProductInventory fruitHoneyCrispApple = new ProductInventory("12", 10);
@@ -26,6 +27,7 @@ public class GroceryStoreApp {
 		ProductInventory meatChicken = new ProductInventory("31", 10);
 		ProductInventory meatPork = new ProductInventory("32", 10);
 		ProductInventory meatBeef = new ProductInventory("33", 10);
+		
 		productInventoryService.addProductInventory(fruitRedApple);
 		productInventoryService.addProductInventory(fruitHoneyCrispApple);
 		productInventoryService.addProductInventory(fruitGrannySmithGreenApple);
@@ -41,10 +43,10 @@ public class GroceryStoreApp {
 		productInventoryService.addProductInventory(meatPork);
 		productInventoryService.addProductInventory(meatBeef);
 		
-		System.out.println("Product Inventories Initialized\n" + productInventoryService);
+		return productInventoryService;	
 	}
 	
-	public void initializeProduct() {
+	public ProductService initializeProduct() {
 		ProductService productService = new ProductService();
 		Product redApple = new Product("11", "Fruit Red Apple", 1.00);
 		Product honeyCrispApple = new Product("12", "Fruit HoneyCrisp Apple", 1.00);
@@ -61,6 +63,7 @@ public class GroceryStoreApp {
 		Product pork = new Product("32", "Pork 1.0", 2.00);
 		Product beef = new Product("33", "Beef", 2.00);
 		
+		productService.addProduct(redApple);
 		productService.addProduct(chicken);
 		productService.addProduct(redOnion);
 		productService.addProduct(yellowBanana);
@@ -74,14 +77,13 @@ public class GroceryStoreApp {
 		productService.addProduct(potatoesIdaho);
 		productService.addProduct(pork);
 		productService.addProduct(beef);
+		
+		return productService;
 	}
 	
-	public void loadShoppingCart() {
+	public void loadShoppingCart(ProductInventoryService service) {
 		ShoppingCart cart = new ShoppingCart();
-		cart.addItemToCart(new Product ("15", "Fruit Yellow Banana",1.00 ),2);
-		cart.addItemToCart(new Product ("23", "Red Onions",0.50 ),2);
-		cart.addItemToCart(new Product ("31", "Chicken 1.0 lb",2.00 ),2);
-		
+		service.addToShoppingCart(new Product ("15", "Fruit Yellow Banana",1.00 ),2, cart);
 		System.out.println("*****************Ordered List in the Shopping Cart***************");
 		for (Cart items : cart.getCartItems()) {
 			System.out.println(items.getProduct() + " : $" + items.getTotalPrice());

@@ -19,8 +19,6 @@ public class ProductInventoryService {
 		String foundSearchMsg = "Product " + pid + " was FOUND in Product Inventory";
 
 		ProductInventory productFound = productInventory.get(pid);
-		
-		System.out.println("POroduct Inventory List: " + productInventory);
 		if (productFound != null) {
 			System.out.println(foundSearchMsg);
 			System.out.println(productFound);
@@ -44,8 +42,27 @@ public class ProductInventoryService {
 		return availableQuantity;
 	}
 	
-	public void UpdateProductQuantity (int productQty) {
-		
+	public void addToShoppingCart(Product product, int quantityPurchased, ShoppingCart shoppingCart){
+		String productId = product.getPid();
+		//check if purchased quantity is less than quantity available
+		if (isQuantityAvailable(product, quantityPurchased)) {
+			//if so add to the cart for now
+			shoppingCart.addItemToCart(product, quantityPurchased);
+			//search for the product
+			ProductInventory inventory = searchProductInventory(productId);
+			//deduct the quantity purchased from quantity available
+			int newQuantity = inventory.getProductQuantity() - quantityPurchased;
+			inventory.setProductQuantity(newQuantity);
+			System.out.println("Updated quantity available for product: "+productId+ " is "+ inventory.getProductQuantity());
+		} else {
+			throw new IllegalStateException("Quantity Unavailable for the selected product " + product + ", quantity purchased " + quantityPurchased);
+		}
 	}
  
+	public boolean isQuantityAvailable(Product product, int quantityPurchased) {
+		String productId = product.getPid();
+		System.out.println("pid: "+ productId);
+		int quantityAvailable = getAvailableProductInventory(productId);
+		return (quantityAvailable > quantityPurchased);
+	}
 }
