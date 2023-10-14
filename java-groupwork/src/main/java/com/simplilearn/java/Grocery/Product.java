@@ -8,8 +8,10 @@ public class Product {
 	private Product soymilk;
 	private Product sriracha;
 	
-	private ProductCategory prodCat;
+	private double prodPrice;
+	
 	private ProductSku prodSku;
+	private ProductCategory prodCat;
 	private Department prodDept;
 	
 	
