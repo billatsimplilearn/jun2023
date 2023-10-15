@@ -1,19 +1,17 @@
 package com.simplilearn.groceryStore;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ShelfStock {
-	private String name;
-	private int quantity;
-	private Department department;
-	private Category category;
+	
+	private List <Product> products = new ArrayList<>();
+
 
 	public ShelfStock() {
 
 	}
 
-	public ShelfStock(String name) {
-		this.name = name;
-	}
 
-	
 
 }

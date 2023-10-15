@@ -12,14 +12,19 @@ public class GroceryStore {
 	private List<Category> categories;
 
 	public GroceryStore() {
-	
+
 		this.employees = new ArrayList<>();
 		this.vendors = new ArrayList<>();
 		this.products = new ArrayList<>();
 		this.departments = new ArrayList<>();
 		this.categories = new ArrayList<>();
-		
+
 	}
-	
+
+	public static void main(String [] args) {
+		
+		Category clothes = new Category("clothes");
+
+	}
 
 }

@@ -1,14 +1,18 @@
 package com.simplilearn.groceryStore;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //1:M -> 1 store has many products
 public class Product {
 
 	private String name;
 	private double price;
 	private int quantity;
-	private Department department;
-	private Category category;
-
+	private Vendor vendor;
+	
+	private List <Category> category= new ArrayList<>();
+	
 	public Product() {
 
 	}
@@ -22,7 +26,7 @@ public class Product {
 		Category shoes = new Category("Shoes");
 		Product casualShoes = new Product();
 		casualShoes.name = "Casual Shoes";
-		casualShoes.category = shoes;
+		casualShoes.category.add(shoes);
 
 		Category clothes = new Category("Clothes");
 		shoes.addSupercategory(clothes);
@@ -34,8 +38,7 @@ public class Product {
 
 		Product shirts = new Product();
 		shirts.name = "Men Shirt";
-		shirts.category = menClothes;
-
+		shirts.category.add(menClothes);
 	}
 
 }

@@ -1,10 +1,13 @@
 package com.simplilearn.groceryStore;
 
-public class ShoppingCart {
-	private String name;
-	private double price;
-	private int quantity;
-	private double total;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ShoppingCart {	
+	
+	private List <ShoppingCardItem> cardItems = new ArrayList<>();
+	
+	private Customer customer;
 	
 
 }
